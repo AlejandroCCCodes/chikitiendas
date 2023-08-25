@@ -9,8 +9,8 @@ const ProductCard = ({ data: { attributes: p, id } }) => {
             className="transform overflow-hidden bg-white duration-200 hover:scale-105 cursor-pointer"
         >
             <Image
-                width={500}
-                height={500}
+                width={250}
+                height={250}
                 src={p.thumbnail.data.attributes.url}
                 alt={p.name}
             />
@@ -18,15 +18,15 @@ const ProductCard = ({ data: { attributes: p, id } }) => {
                 <h2 className="text-lg font-medium">{p.name}</h2>
                 <div className="flex items-center text-black/[0.5]">
                     <p className="mr-2 text-lg font-semibold">
-                        &#8377;{p.price}
+                        S/.{p.price}
                     </p>
 
                     {p.original_price && (
                         <>
                             <p className="text-base  font-medium line-through">
-                                &#8377;{p.original_price}
+                                S/.{p.original_price}
                             </p>
-                            <p className="ml-auto text-base font-medium text-green-500">
+                            <p className="ml-12 text-base font-medium text-green-500">
                                 {getDiscountedPricePercentage(
                                     p.original_price,
                                     p.price

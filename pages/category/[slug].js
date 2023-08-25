@@ -56,7 +56,7 @@ const Category = ({ category, products, slug }) => {
                             disabled={pageIndex === 1}
                             onClick={() => setPageIndex(pageIndex - 1)}
                         >
-                            Previous
+                            Anterior
                         </button>
 
                         <span className="font-bold">{`${pageIndex} of ${
@@ -71,7 +71,7 @@ const Category = ({ category, products, slug }) => {
                             }
                             onClick={() => setPageIndex(pageIndex + 1)}
                         >
-                            Next
+                            Siguiente
                         </button>
                     </div>
                 )}

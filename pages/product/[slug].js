@@ -57,12 +57,12 @@ const ProductDetails = ({ product, products }) => {
                         {/* PRODUCT PRICE */}
                         <div className="flex items-center">
                             <p className="mr-2 text-lg font-semibold">
-                                MRP : &#8377;{p.price}
+                                S/.{p.price}
                             </p>
                             {p.original_price && (
                                 <>
                                     <p className="text-base  font-medium line-through">
-                                        &#8377;{p.original_price}
+                                        S/.{p.original_price}
                                     </p>
                                     <p className="ml-auto text-base font-medium text-green-500">
                                         {getDiscountedPricePercentage(
@@ -74,23 +74,46 @@ const ProductDetails = ({ product, products }) => {
                                 </>
                             )}
                         </div>
-
+                        
+                        {/*
                         <div className="text-md font-medium text-black/[0.5]">
-                            incl. of taxes
+                            
                         </div>
-                        <div className="text-md font-medium text-black/[0.5] mb-20">
-                            {`(Also includes all applicable duties)`}
+                        */}
+                        <div className="text-md font-medium text-black/[0.5] mb-5">
+                            {``}
                         </div>
+                        
+
+
+                        {/* PRODUCT SIZE RANGE START */}
+                        
+                        <div className="mb-10">
+                        {/* HEADING START */}
+                        {/*
+                        <div className="flex justify-between mb-2">
+                            <div className="text-md font-semibold">
+                                Color:
+                            </div>
+                            <div className="text-md font-medium text-black/[0.5] cursor-pointer">
+                                    
+                            </div>
+                        </div>
+                        */}
+                        {/* HEADING END */}
+                        </div>
+
+                        {/* PRODUCT SIZE RANGE END */}
 
                         {/* PRODUCT SIZE RANGE START */}
                         <div className="mb-10">
                             {/* HEADING START */}
                             <div className="flex justify-between mb-2">
                                 <div className="text-md font-semibold">
-                                    Select Size
+                                    Tallas:
                                 </div>
                                 <div className="text-md font-medium text-black/[0.5] cursor-pointer">
-                                    Select Guide
+                                    
                                 </div>
                             </div>
                             {/* HEADING END */}
@@ -105,11 +128,11 @@ const ProductDetails = ({ product, products }) => {
                                         key={i}
                                         className={`border rounded-md text-center py-3 font-medium ${
                                             item.enabled
-                                                ? "hover:border-black cursor-pointer"
+                                                ? "hover:border-lime-500 cursor-pointer"
                                                 : "cursor-not-allowed bg-black/[0.1] opacity-50"
                                         } ${
                                             selectedSize === item.size
-                                                ? "border-black"
+                                                ? "bg-lime-500"
                                                 : ""
                                         }`}
                                         onClick={() => {
@@ -123,10 +146,12 @@ const ProductDetails = ({ product, products }) => {
                             </div>
                             {/* SIZE END */}
 
+                            
+
                             {/* SHOW ERROR START */}
                             {showError && (
                                 <div className="text-red-600 mt-1">
-                                    Size selection is required
+                                    Seleccione una talla
                                 </div>
                             )}
                             {/* SHOW ERROR END */}
@@ -135,7 +160,7 @@ const ProductDetails = ({ product, products }) => {
 
                         {/* ADD TO CART BUTTON START */}
                         <button
-                            className="w-full py-4 rounded-full bg-black text-white text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75"
+                            className="w-full py-4 rounded-full bg-orange-500 text-white text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75"
                             onClick={() => {
                                 if (!selectedSize) {
                                     setShowError(true);
@@ -157,11 +182,11 @@ const ProductDetails = ({ product, products }) => {
                                 }
                             }}
                         >
-                            Add to Cart
+                            COMPRA AQUI
                         </button>
                         {/* ADD TO CART BUTTON END */}
 
-                        {/* WHISHLIST BUTTON START */}
+                        {/* WHISHLIST BUTTON START 
                         <button className="w-full py-4 rounded-full border border-black text-lg font-medium transition-transform active:scale-95 flex items-center justify-center gap-2 hover:opacity-75 mb-10">
                             Whishlist
                             <IoMdHeartEmpty size={20} />
@@ -170,7 +195,7 @@ const ProductDetails = ({ product, products }) => {
 
                         <div>
                             <div className="text-lg font-bold mb-5">
-                                Product Details
+                                Detalles del producto
                             </div>
                             <div className="markdown text-md mb-5">
                                 <ReactMarkdown>{p.description}</ReactMarkdown>

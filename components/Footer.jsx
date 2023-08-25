@@ -1,30 +1,30 @@
 import Link from "next/link";
 import React from "react";
-import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import Wrapper from "./Wrapper";
 
 const Footer = () => {
     return (
-        <footer className="bg-black text-white pt-14 pb-3">
+        <footer className="bg-amber-500 text-white pt-14 pb-3">
             <Wrapper className="flex justify-between flex-col md:flex-row gap-[50px] md:gap-0">
                 {/* LEFT START */}
                 <div className="flex gap-[50px] md:gap-[75px] lg:gap-[100px] flex-col md:flex-row">
                     {/* MENU START */}
                     <div className="flex flex-col gap-3 shrink-0">
                         <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
-                            Find a store
+                            OSLO
                         </div>
                         <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
-                            become a partner
+                            KUKULI
                         </div>
                         <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
-                            sign up for email
+                            FISHER PRICE
                         </div>
                         <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
-                            send us feedback
+                            PLAY DOH
                         </div>
                         <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
-                            student discount
+                            CHALICEN
                         </div>
                     </div>
                     {/* MENU END */}
@@ -34,43 +34,44 @@ const Footer = () => {
                         {/* MENU START */}
                         <div className="flex flex-col gap-3">
                             <div className="font-oswald font-medium uppercase text-sm">
-                                get help
+                                productos
                             </div>
                             <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Order Status
+                                Precios Bajos
                             </div>
                             <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Delivery
+                                Nuevos productos
                             </div>
                             <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Returns
+                                Mejores ventas
                             </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Payment Options
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Contact Us
-                            </div>
+
                         </div>
                         {/* MENU END */}
 
                         {/* MENU START */}
                         <div className="flex flex-col gap-3">
                             <div className="font-oswald font-medium uppercase text-sm">
-                                About nike
+                                Nuestro negocio
                             </div>
                             <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                News
+                                Delivery
                             </div>
                             <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Careers
+                                Términos y Condiciones
                             </div>
                             <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Investors
+                                Sobre Nosotros
                             </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Sustainability
-                            </div>
+
+                        </div>
+                        {/* MENU END */}
+
+                        {/* MENU START */}
+                        <div className="flex flex-col gap-3">
+                        <Link href="/">
+                            <img src="/logo.png" className="w-[100px] md:w-[300px]" />
+                        </Link>
                         </div>
                         {/* MENU END */}
                     </div>
@@ -79,7 +80,9 @@ const Footer = () => {
                 {/* LEFT END */}
 
                 {/* RIGHT START */}
+                
                 <div className="flex gap-4 justify-center md:justify-start">
+                    
                     <div
                         onClick={() =>
                             window.open("https://facebook.com", "_blank")
@@ -88,42 +91,38 @@ const Footer = () => {
                     >
                         <FaFacebookF size={20} />
                     </div>
-                    <Link
-                        href="https://twitter.com"
+                    
+                    <div
+                        onClick={() =>
+                            window.open("https://whatsapp.com", "_blank")
+                        }
                         className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer"
                     >
-                        <FaTwitter size={20} />
-                    </Link>
-                    <div className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer">
-                        <FaYoutube size={20} />
+                        <FaWhatsapp size={20} />
                     </div>
-                    <div className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer">
-                        <FaInstagram size={20} />
-                    </div>
+ 
                 </div>
                 {/* RIGHT END */}
             </Wrapper>
             <Wrapper className="flex justify-between mt-10 flex-col md:flex-row gap-[10px] md:gap-0">
                 {/* LEFT START */}
                 <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer text-center md:text-left">
-                    © 2023 Nike, Inc. All Rights Reserved
+                    © 2023 Chikitiendas, Inc. All Rights Reserved
                 </div>
                 {/* LEFT END */}
 
                 {/* RIGHT START */}
                 <div className="flex gap-2 md:gap-5 text-center md:text-left flex-wrap justify-center">
                     <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
-                        Guides
+                        Jr. Columna Pasco N 18 - URB San Juan - Cerro de Pasco
                     </div>
                     <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
-                        Terms of Sale
+                        (+51) 941 871 721
                     </div>
                     <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
-                        Terms of Use
+                        chikitiendas@gmail.com
                     </div>
-                    <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
-                        Privacy Policy
-                    </div>
+
                 </div>
                 {/* RIGHT END */}
             </Wrapper>
