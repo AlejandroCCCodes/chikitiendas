@@ -70,7 +70,7 @@ const Footer = () => {
                         {/* MENU START */}
                         <div className="flex flex-col gap-3">
                         <Link href="/">
-                            <img src="/logo.png" className="w-[100px] md:w-[300px]" />
+                            <img src="/ChikiLogo.png" className="w-[100px] md:w-[300px]" />
                         </Link>
                         </div>
                         {/* MENU END */}
@@ -85,7 +85,7 @@ const Footer = () => {
                     
                     <div
                         onClick={() =>
-                            window.open("https://facebook.com", "_blank")
+                            window.open("https://www.facebook.com/chikitiendas.pasco", "_blank")
                         }
                         className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer"
                     >
@@ -94,7 +94,7 @@ const Footer = () => {
                     
                     <div
                         onClick={() =>
-                            window.open("https://whatsapp.com", "_blank")
+                            window.open("https://walink.co/8c59d4", "_blank")
                         }
                         className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer"
                     >

@@ -171,13 +171,14 @@ const ProductDetails = ({ product, products }) => {
                                             behavior: "smooth",
                                         });
                                 } else {
-                                    dispatch(
-                                        addToCart({
-                                            ...product?.data?.[0],
-                                            selectedSize,
-                                            oneQuantityPrice: p.price,
-                                        })
-                                    );
+                                    <div
+                                    onClick={() =>
+                                        window.open("https://walink.co/8c59d4", "_blank")
+                                    }
+                                    className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer"
+                                        >
+                                        <FaFacebookF size={20} />
+                                    </div>
                                     notify();
                                 }
                             }}
