@@ -8,7 +8,7 @@ const Footer = () => {
         <footer className="bg-amber-500 text-white pt-14 pb-3">
             <Wrapper className="flex justify-between flex-col md:flex-row gap-[50px] md:gap-0">
                 {/* LEFT START */}
-                <div className="flex gap-[50px] md:gap-[75px] lg:gap-[100px] flex-col md:flex-row">
+                <div className="flex gap-[50px] md:gap-[75px] lg:gap-[120px] flex-col md:flex-row">
                     {/* MENU START */}
                     <div className="flex flex-col gap-3 shrink-0">
                         <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
@@ -29,6 +29,19 @@ const Footer = () => {
                     </div>
                     {/* MENU END */}
 
+                    <div className="flex flex-col gap-3 shrink-0">
+                        
+                        {/* MENU START */}
+                        <div className="flex flex-col gap-3">
+                        <Link href="/">
+                            <img src="/ChikiLogo.png" className="w-[100px] md:w-[300px]" />
+                        </Link>
+                        </div>
+                        {/* MENU END */}
+                    </div>
+                    {/* MENU END */}
+
+                    
                     {/* NORMAL MENU START */}
                     <div className="flex gap-[50px] md:gap-[75px] lg:gap-[100px] shrink-0">
                         {/* MENU START */}
@@ -67,13 +80,7 @@ const Footer = () => {
                         </div>
                         {/* MENU END */}
 
-                        {/* MENU START */}
-                        <div className="flex flex-col gap-3">
-                        <Link href="/">
-                            <img src="/ChikiLogo.png" className="w-[100px] md:w-[300px]" />
-                        </Link>
-                        </div>
-                        {/* MENU END */}
+                        
                     </div>
                     {/* NORMAL MENU END */}
                 </div>
@@ -114,7 +121,7 @@ const Footer = () => {
                 {/* RIGHT START */}
                 <div className="flex gap-2 md:gap-5 text-center md:text-left flex-wrap justify-center">
                     <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
-                        Jr. Columna Pasco N 18 - URB San Juan - Cerro de Pasco
+                        Jr. Columna Pasco N° 18 - URB San Juan - Cerro de Pasco
                     </div>
                     <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
                         (+51) 941 871 721

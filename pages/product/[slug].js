@@ -8,18 +8,20 @@ import { getDiscountedPricePercentage } from "@/utils/helper";
 import ReactMarkdown from "react-markdown";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "@/store/cartSlice";
+import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ProductDetails = ({ product, products }) => {
     const [selectedSize, setSelectedSize] = useState();
+    const [selectedColor, setSelectedColor] = useState();
     const [showError, setShowError] = useState(false);
     const dispatch = useDispatch();
     const p = product?.data?.[0]?.attributes;
 
     const notify = () => {
-        toast.success("Success. Check your cart!", {
+        toast.success("Redirigiendo...", {
             position: "bottom-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -86,24 +88,50 @@ const ProductDetails = ({ product, products }) => {
                         
 
 
-                        {/* PRODUCT SIZE RANGE START */}
-                        
+                        {/* PRODUCT COLOR RANGE START */}
                         <div className="mb-10">
-                        {/* HEADING START */}
-                        {/*
-                        <div className="flex justify-between mb-2">
-                            <div className="text-md font-semibold">
-                                Color:
-                            </div>
-                            <div className="text-md font-medium text-black/[0.5] cursor-pointer">
+                            {/* HEADING START */}
+                            <div className="flex justify-between mb-2">
+                                <div className="text-md font-semibold">
+                                    Color:
+                                </div>
+                                <div className="text-md font-medium text-black/[0.5] cursor-pointer">
                                     
+                                </div>
                             </div>
-                        </div>
-                        */}
-                        {/* HEADING END */}
-                        </div>
+                            {/* HEADING END */}
 
-                        {/* PRODUCT SIZE RANGE END */}
+                            {/* COLOR START */}
+                            <div
+                                id="sizesGrid"
+                                className="grid grid-cols-3 gap-2"
+                            >
+                                {p.color.data.map((item, i) => (
+                                    <div
+                                        key={i}
+                                        className={`border rounded-md text-center py-3 font-medium ${
+                                            item.enabled
+                                                ? "hover:border-lime-500 cursor-pointer"
+                                                : "cursor-not-allowed bg-black/[0.1] opacity-50"
+                                        } ${
+                                            selectedColor === item.color
+                                                ? "bg-lime-500"
+                                                : ""
+                                        }`}
+                                        onClick={() => {
+                                            setSelectedColor(item.color);
+                                            setShowError(false);
+                                        }}
+                                    >
+                                        {item.color}
+                                    </div>
+                                ))}
+                            </div>
+                            {/* COLOR END */}
+
+                            
+                        </div>
+                        {/* PRODUCT COLOR RANGE END */}
 
                         {/* PRODUCT SIZE RANGE START */}
                         <div className="mb-10">
@@ -146,15 +174,6 @@ const ProductDetails = ({ product, products }) => {
                             </div>
                             {/* SIZE END */}
 
-                            
-
-                            {/* SHOW ERROR START */}
-                            {showError && (
-                                <div className="text-red-600 mt-1">
-                                    Seleccione una talla
-                                </div>
-                            )}
-                            {/* SHOW ERROR END */}
                         </div>
                         {/* PRODUCT SIZE RANGE END */}
 
@@ -162,25 +181,10 @@ const ProductDetails = ({ product, products }) => {
                         <button
                             className="w-full py-4 rounded-full bg-orange-500 text-white text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75"
                             onClick={() => {
-                                if (!selectedSize) {
-                                    setShowError(true);
-                                    document
-                                        .getElementById("sizesGrid")
-                                        .scrollIntoView({
-                                            block: "center",
-                                            behavior: "smooth",
-                                        });
-                                } else {
-                                    <div
-                                    onClick={() =>
-                                        window.open("https://walink.co/8c59d4", "_blank")
-                                    }
-                                    className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer"
-                                        >
-                                        <FaFacebookF size={20} />
-                                    </div>
+                                
+                                    window.open("https://walink.co/8c59d4", "_blank")
+                    
                                     notify();
-                                }
                             }}
                         >
                             COMPRA AQUI
@@ -227,6 +231,7 @@ export async function getStaticPaths() {
         fallback: false,
     };
 }
+
 
 export async function getStaticProps({ params: { slug } }) {
     const product = await fetchDataFromApi(

@@ -4,7 +4,7 @@ import ProductCard from "@/components/ProductCard";
 import { fetchDataFromApi } from "@/utils/api";
 import useSWR from "swr";
 import { useRouter } from "next/router";
-const maxResult = 3;
+const maxResult = 1;
 
 const Category = ({ category, products, slug }) => {
     const [pageIndex, setPageIndex] = useState(1);
@@ -52,7 +52,7 @@ const Category = ({ category, products, slug }) => {
                 {data?.meta?.pagination?.total > maxResult && (
                     <div className="flex gap-3 items-center justify-center my-16 md:my-0">
                         <button
-                            className={`rounded py-2 px-4 bg-black text-white disabled:bg-gray-200 disabled:text-gray-500`}
+                            className={`rounded py-2 px-4 bg-orange-950 text-white disabled:bg-gray-200 disabled:text-gray-500`}
                             disabled={pageIndex === 1}
                             onClick={() => setPageIndex(pageIndex - 1)}
                         >
@@ -64,7 +64,7 @@ const Category = ({ category, products, slug }) => {
                         }`}</span>
 
                         <button
-                            className={`rounded py-2 px-4 bg-black text-white disabled:bg-gray-200 disabled:text-gray-500`}
+                            className={`rounded py-2 px-4 bg-orange-950 text-white disabled:bg-gray-200 disabled:text-gray-500`}
                             disabled={
                                 pageIndex ===
                                 (data && data.meta.pagination.pageCount)

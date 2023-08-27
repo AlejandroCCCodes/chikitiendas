@@ -1,0 +1,59 @@
+.primary_btn {
+    padding: 18px 10px;
+    background-color: rgb(11, 151, 245);
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 220px;
+    font-size: 16px;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .outline_btn {
+    padding: 18px 10px;
+    border: 1px solid rgb(11, 151, 245);
+    color: black;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 220px;
+    font-size: 16px;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 767px) {
+    .primary_btn{
+      padding: 12px 5px;
+      background-color: rgb(11, 151, 245);
+      color: white;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      min-width: 170px;
+      font-size: 12px;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .outline_btn {
+      padding: 12px 5px;
+      border: 1px solid rgb(11, 151, 245);
+      color: black;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 220px;
+      font-size: 16px;
+      justify-content: center;
+      background-color: white;
+      width: 100%;
+      cursor: pointer;
+    }
+  }

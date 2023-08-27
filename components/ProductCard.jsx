@@ -9,8 +9,8 @@ const ProductCard = ({ data: { attributes: p, id } }) => {
             className="transform overflow-hidden bg-white duration-200 hover:scale-105 cursor-pointer"
         >
             <Image
-                width={250}
-                height={250}
+                width={500}
+                height={500}
                 src={p.thumbnail.data.attributes.url}
                 alt={p.name}
             />
