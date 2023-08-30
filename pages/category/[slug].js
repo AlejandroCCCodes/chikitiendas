@@ -4,7 +4,7 @@ import ProductCard from "@/components/ProductCard";
 import { fetchDataFromApi } from "@/utils/api";
 import useSWR from "swr";
 import { useRouter } from "next/router";
-const maxResult = 1;
+const maxResult = 15;
 
 const Category = ({ category, products, slug }) => {
     const [pageIndex, setPageIndex] = useState(1);
